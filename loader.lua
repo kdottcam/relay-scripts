@@ -1,9 +1,9 @@
 local GAMES = {
-    [4777817887] = "BladeBall",
-    [9908641400] = "FootballFusion",
-    [6022371481] = "SpellingBee",
-    [4730278139] = "UntiltedBoxingGame",
-    [6969237940] = "UntiltedBoxingGame",
+    [13772394625] = "BladeBall",
+    [82866880824588] = "FootballFusion",
+    [17590362521] = "SpellingBee",
+    [13621938427] = "UntiltedBoxingGame",
+    [92637789841354] = "CleanAllTheLeaves",
 }
 
 local name = GAMES[game.GameId]

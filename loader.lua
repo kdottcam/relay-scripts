@@ -1,4 +1,4 @@
-local BASE = "https://raw.githubusercontent.com/kdottcam/relay-scripts/refs/heads/main/scripts/"
+```local BASE = "https://raw.githubusercontent.com/kdottcam/relay-scripts/refs/heads/main/scripts/"
 
 local HUBS = {
     [4777817887]  = "BladeBall",
@@ -23,4 +23,4 @@ local fn, err = loadstring(src)
 if not fn then return warn("[Relay] compile error in " .. name .. ": " .. tostring(err)) end
 
 local ran, runErr = pcall(fn)
-if not ran then warn("[Relay] runtime error in " .. name .. ": " .. tostring(runErr)) end
+if not ran then warn("[Relay] runtime error in " .. name .. ": " .. tostring(runErr)) end```

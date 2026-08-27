@@ -20,6 +20,16 @@ local HUBS = {
     [4730278139]        = "UntiltedBoxingGame",
     [6969237940]        = "UntiltedBoxingGame",
     [4931927012]        = "BasketballLegends",
+    [7633926880]        = "BloxStrike",
+    [114234929420007]   = "BloxStrike",
+    [10476380360]       = "MyCourt",
+    [116047689628641]   = "MyCourt",
+    -- RH2. One universe covering The Journey, MyCourt and the Arcade, so the
+    -- GameId carries all of them; the place ids are here as a backstop.
+    [2459091562]        = "RH2",
+    [6549794549]        = "RH2",
+    [6678600773]        = "RH2",
+    [7235817949]        = "RH2",
 }
 
 local name = HUBS[game.GameId] or HUBS[game.PlaceId]

@@ -1,8 +1,5 @@
 local BASE = "https://raw.githubusercontent.com/kdottcam/relay-scripts/refs/heads/main/scripts/"
 
--- Keyed by GameId first, which covers every place in a universe, with the
--- odd PlaceId alongside it where a game has a standalone place that reports
--- a different id.
 local HUBS = {
     [3725359351]        = "AnimalHospital",
     [10148749921]       = "AnimalHospital",
@@ -11,8 +8,8 @@ local HUBS = {
     [10539411000]       = "CleanAllTheLeaves",
     [9908641400]        = "FootballFusion",
     [6022371481]        = "SpellingBee",
-    [10144280947]       = "SpeedMonkey",
-    [114697347887839]   = "SpeedMonkey",
+    [10144280947]       = "Speedmonkey",
+    [114697347887839]   = "Speedmonkey",
     [833423526]         = "Strucid",
     [2377868063]        = "Strucid",
     [7128251171]        = "SuperstarBaseball",
@@ -20,16 +17,13 @@ local HUBS = {
     [4730278139]        = "UntiltedBoxingGame",
     [6969237940]        = "UntiltedBoxingGame",
     [4931927012]        = "BasketballLegends",
-    [7633926880]        = "BloxStrike",
-    [114234929420007]   = "BloxStrike",
-    [10476380360]       = "MyCourt",
-    [116047689628641]   = "MyCourt",
-    -- RH2. One universe covering The Journey, MyCourt and the Arcade, so the
-    -- GameId carries all of them; the place ids are here as a backstop.
-    [2459091562]        = "RH2",
-    [6549794549]        = "RH2",
-    [6678600773]        = "RH2",
-    [7235817949]        = "RH2",
+    [7633926880]        = "Bloxstrike",
+    [114234929420007]   = "Bloxstrike",
+
+    [2459091562]        = "Rh2",
+    [6549794549]        = "Rh2",
+    [6678600773]        = "Rh2",
+    [7235817949]        = "Rh2",
 }
 
 local name = HUBS[game.GameId] or HUBS[game.PlaceId]

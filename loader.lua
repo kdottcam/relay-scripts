@@ -1,5 +1,7 @@
+local environment = getgenv()
+
 if script_key then
-    getgenv().script_key = script_key
+    environment.script_key = script_key
 end
 
 local Players = game:GetService("Players")
@@ -47,22 +49,42 @@ if not name then
     )
 end
 
+environment.__RELAY_LOADED_GAMES =
+    environment.__RELAY_LOADED_GAMES or {}
+
+if environment.__RELAY_LOADED_GAMES[name] then
+    return
+end
+
 local downloaded, source = pcall(function()
     return game:HttpGet(BASE .. name .. ".lua")
 end)
 
 if not downloaded then
-    return fail("Could not download " .. name .. ": " .. tostring(source))
+    return fail(
+        "Could not download " .. name .. ": " .. tostring(source)
+    )
 end
 
 local compiled, compileError = loadstring(source)
 
 if not compiled then
-    return fail("Compile error in " .. name .. ": " .. tostring(compileError))
+    return fail(
+        "Compile error in " .. name .. ": " .. tostring(compileError)
+    )
 end
 
-local ran, runtimeError = pcall(compiled)
+environment.__RELAY_LOADED_GAMES[name] = true
 
-if not ran then
-    fail("Runtime error in " .. name .. ": " .. tostring(runtimeError))
-end
+task.spawn(function()
+    local ran, runtimeError = pcall(compiled)
+
+    if not ran then
+        print(
+            "[Relay] Runtime error in "
+                .. name
+                .. ": "
+                .. tostring(runtimeError)
+        )
+    end
+end)
